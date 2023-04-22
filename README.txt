@@ -1,4 +1,4 @@
-Github deployment: https://raikidnt.github.io/Bookstore-Static-Website/index.html
+Github deployment: https://raikidnt.github.io/Bookstore-Static-Website/
 Refference
 https://colorhunt.co
 https://www.w3schools.com
