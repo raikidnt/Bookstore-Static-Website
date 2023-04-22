@@ -1,0 +1,115 @@
+<!--   RMIT University Vietnam
+    Course: COSC2430 Web Programming
+    Semester: 2023A
+    Assessment: Assignment 1
+    Author: Do Nhat Thanh
+    ID: S397797
+    Acknowledgement: Google Fonts, Live Server, Iconfinder, Amazon.com(images and books).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!-- Header -->
+    <header>            
+        <input class="toggle-button" id="navbar-toggle" type="checkbox">
+        <label class="toggle-label" for="navbar-toggle">
+            <span class="navbar-icon"></span>
+        </label>
+        <nav class="navbar">
+            <div class="navbar-img-container">
+                <img src="img/bookstorelogo.png" alt="">
+                <p>THANH BOOKSTORE</p>
+            </div>
+            <ul class="navbar-list">
+                <li class="navbar-item"><a href="index.html">Home</a></li>
+                <li class="navbar-item"><a href="Mystery.html">Mystery</a></li>
+                <li class="navbar-item"><a href="Adventure.html">Adventure</a></li>
+                <li class="navbar-item"><a href="Fiction.html">Fiction</a></li>
+            </ul>
+            
+        </nav>            
+    </header>
+<!-- Main -->
+    <div id="contactform">
+        <form id="form">
+            <div class="contact-title">
+                <h1>Contact Us</h1>
+            </div>
+            <div class="purpose">
+                <label for="contactpurpose">Contact Purpose</label>
+                <select name="contactpurpose" id="contactpurpose">
+                    <option value="sell">I want to sell books</option>
+                    <option value="buy">I want to buy books</option>
+                </select>
+            </div>
+            <div class="name">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="inputbox">
+            </div>
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="inputbox">
+            </div>
+            <div class="phone">
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" id="inputbox">
+            </div>
+            <div class="contactpreference">
+                <label for="contactpreference">Contact Preference:</label>
+                <div class="checkbox">
+                    <p>Email</p>
+                    <input type="checkbox" name="contactpreference" id="check" value="email">
+                    <label for="email"></label>
+                </div>
+                <div class="checkbox">
+                    <p>Phone</p>
+                    <input type="checkbox" name="contactpreference" id="check" value="phone">
+                    <label for="phone"></label> 
+                </div>
+            </div>
+            <div class="checkbox">
+                <label for="newsletter">Receive Weekly Newsletter:</label>
+                <div class="checkbox">
+                    <input type="checkbox" name="contactpreference" id="check" value="YesNo">
+                    <label for="YesNo"></label>
+                </div>
+            </div>
+            <div class="notes">
+                <label for="notes">Extra Notes:</label>
+                <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+            </div>
+            <div class="submit">
+                <button class="add-to-cart"> SUBMIT</button>
+            </div>
+        </form>
+    </div>
+<!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="#"><img src="img/github_icon.png" alt="github_icon"></a>
+                <a href="#"><img src="img/fb_icon.png" alt="fb_icon"></a>
+                <a href="#"><img src="img/instagram_icon.png" alt="instagram_icon"></a>
+                <a href="#"><img src="img/twitter_icon.png" alt="twitter_icon"></a>
+            </div>
+        
+            <div class="row">
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Copyright</a></li>
+                    <li><a href="Contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

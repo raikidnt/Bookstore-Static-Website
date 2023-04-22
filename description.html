@@ -1,0 +1,104 @@
+<!--   RMIT University Vietnam
+    Course: COSC2430 Web Programming
+    Semester: 2023A
+    Assessment: Assignment 1
+    Author: Do Nhat Thanh
+    ID: S397797
+    Acknowledgement: Google Fonts, Live Server, Iconfinder, Amazon.com(images and books).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!-- Header -->
+    <header>            
+        <input class="toggle-button" id="navbar-toggle" type="checkbox">
+        <label class="toggle-label" for="navbar-toggle">
+            <span class="navbar-icon"></span>
+        </label>
+        <nav class="navbar">
+            <div class="navbar-img-container">
+                <img src="img/bookstorelogo.png" alt="">
+                <p>THANH BOOKSTORE</p>
+            </div>
+            <ul class="navbar-list">
+                <li class="navbar-item"><a href="index.html">Home</a></li>
+                <li class="navbar-item"><a href="Mystery.html">Mystery</a></li>
+                <li class="navbar-item"><a href="Adventure.html">Adventure</a></li>
+                <li class="navbar-item"><a href="Fiction.html">Fiction</a></li>
+            </ul>
+        </nav>            
+    </header>
+<!-- Main -->
+<div class="product">
+    <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li>></li>
+        <li><a href="Mystery.html">Mystery</a></li>
+        <li>></li>
+        <li><a href="description.html">The Hound of the Baskervilles</a></li>
+      </ul>
+      
+      <div class="book-details">
+        <div class="book-buy">
+            <div class="book-image">
+                <div class="main-image">
+                    <img src="img/sherlock.jpg" alt="Book Cover">
+                </div>
+                <div class="minis">
+                    <img src="img/OIP.jpg" alt="">
+                    <img src="img/OIP 2.jpg" alt="">
+                    <img src="img/OIP 3.jpg" alt="">
+                </div>    
+            </div>
+            <div class="book-info">
+            <h1>$19.99</h1>
+            <button class="add-to-cart">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="book-des">
+            <h1>The Hound of the Baskervilles</h1>
+            <p>
+                The Hound of the Baskervilles is the third of the four crime novels 
+                by British writer Arthur Conan Doyle featuring the detective Sherlock Holmes. 
+                Originally serialised in The Strand Magazine from August 1901 to April 1902, 
+                it is set in 1889 largely on Dartmoor in Devon in England's West Country 
+                and tells the story of an attempted murder inspired by the legend of a fearsome, 
+                diabolical hound of supernatural origin. Holmes and Watson investigate the case. 
+                This was the first appearance of Holmes since his apparent death in "The Final Problem", 
+                and the success of The Hound of the Baskervilles led to the character's eventual revival.
+                One of the most famous stories ever written, in 2003, the book was listed 
+                as number 128 of 200 on the BBC's The Big Read poll of the UK's "best-loved novel". 
+                In 1999, a poll of "Sherlockians" ranked it as the best of the four Holmes novels.
+            </p>
+        </div>    
+      </div>
+    </div>
+<!-- Footer -->
+      <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="#"><img src="img/github_icon.png" alt="github_icon"></a>
+                <a href="#"><img src="img/fb_icon.png" alt="fb_icon"></a>
+                <a href="#"><img src="img/instagram_icon.png" alt="instagram_icon"></a>
+                <a href="#"><img src="img/twitter_icon.png" alt="twitter_icon"></a>
+            </div>
+            <div class="row">
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Copyright</a></li>
+                    <li><a href="Contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

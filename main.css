@@ -1,0 +1,703 @@
+/*  RMIT University Vietnam
+    Course: COSC2430 Web Programming
+    Semester: 2023A
+    Assessment: Assignment 1
+    Author: Do Nhat Thanh
+    ID: S397797
+    Acknowledgement: Color Hunt, W3Schools, Stackoverflow.
+ */
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
+/* default start */
+body{
+    font-family: 'EB Garamond', serif;
+    background-image: url(img/background.jpg);
+    margin: 0;
+}
+
+iframe {
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+/* default end */
+
+
+/* Header START */
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+header .navbar{
+    width: 100%;
+    background-color: #A9907E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+header .navbar-img-container{
+    margin-left: 40px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+header .navbar-img-container p{
+    margin-left: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+header .navbar-img-container img{
+    width: 50px;
+    height: 50px;
+}
+header .navbar-list{
+    display: flex;
+    list-style: none;
+    margin-right: 10px;
+}
+header .navbar-list .navbar-item{
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+}
+header .navbar-item:hover{
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
+}
+header .navbar-item a{
+    text-decoration: none;
+    display: block;
+    color: black;
+    width: 100%;
+}
+header .toggle-button{
+    display: none;
+}
+@media only screen and (max-width: 960px){
+    header .toggle-button{
+        display: none;
+    }
+
+    header .toggle-label{
+        width: 30px;
+        height: 30px;
+        border: 2px solid black;
+        border-radius: 5px;
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        display: flex;
+        transform: translateY(-50%);
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    header .navbar-icon, .navbar-icon::before, .navbar-icon::after{
+        width: 15px;
+        height: 3px;
+        background-color: black;
+        display: inline-block;
+        border-radius: 3px;
+    }
+
+    header .navbar-icon::before, .navbar-icon::after{
+        content: "";
+        position: absolute;
+    }
+
+    header .navbar-icon::before{
+        top: 5px;
+    }
+
+    header .navbar-icon::after{
+        top: 20px;
+    }
+
+    header .toggle-button:checked ~ .navbar .navbar-list{
+        display: block;
+        text-align: center;
+        width: 100%;
+        background-color: #A9907E;
+    }
+
+
+    header .toggle-button:checked + .toggle-label .navbar-icon{
+        background-color: transparent;
+    }
+    header .toggle-button:checked + .toggle-label .navbar-icon::before{
+        transition: 0.5s ease all;
+        top: 12px;
+        transform: rotate(-135deg);
+    }
+     header .toggle-button:checked + .toggle-label .navbar-icon::after{
+        transition: 0.5s ease all;
+        top: 12px;
+        transform: rotate(135deg);
+    }
+
+    header .navbar {
+        display: block;
+    }
+
+    header .navbar-list{
+        display: none;
+    }
+}
+/* Header END */
+
+
+/* Footer START */
+.footer{
+    font-weight: bold;
+    font-size: 2rem;
+    background:#A9907E;
+    padding:30px 0px;
+    text-align:center;
+    overflow: hidden;
+}
+    
+.footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:black;;
+    font-size:0.8em;
+}
+    
+.footer .row a{
+    text-decoration:none;
+    color:black;
+    transition:0.5s ease all;
+}
+    
+.footer .row a:hover{
+    color:aliceblue;
+}
+    
+.footer .row ul{
+    width:100%;
+}
+    
+.footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+}
+@media (max-width:960px){
+    .footer{
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+}
+}
+/* Footer END */
+
+
+/* Mainpage and Category START */
+
+/* Books START */
+main{
+    overflow: hidden;
+}
+.intro{
+    display: flex;
+    color: aliceblue;
+    padding-top: 100px;
+}
+.intro p{
+    font-size: 2.5rem;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.category{
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #A9907E;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 90%;
+    z-index: -1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    transition: 0.5s ease;
+}
+.category:hover{
+    transform: scale(1.03);
+}
+.category .book{
+    display: flex;
+    width: max-content;
+    flex-direction: column;
+    margin: 1rem;
+}
+.category .description a{
+    text-decoration: none;
+}
+.category .description h1{
+    align-items: center;
+    font-size: 2rem !important;
+}
+.category .description h1:hover{
+    transition: 0.5s ease all;
+    transform: scale(1.5);
+}
+.category .description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    width: 30%;
+    height: 500px;
+    border-radius: 10px;
+}
+.category .description p{
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+.category .container-book{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 ;
+    padding: 0.5rem;
+}
+.category img{
+    display: flex;
+    height: 30rem;
+    width: 17.5rem;
+    align-items: flex-end;
+    border-radius: 2rem;
+    box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4);
+    margin: 1rem;
+    transition: 0.5s ease all;
+}
+.category img:hover{
+    transform: translateY(-15px);
+}
+.category .container-book a{
+    text-decoration: none;
+    color: #000;
+}
+.intro {
+    text-align: center;
+    padding-top: 100px !important;
+}
+@media screen and (max-width: 1800px) {
+
+    .category {
+        display: block;
+    }
+    .category .description{
+        display: block;
+        width: fit-content;
+        height: fit-content;
+    }
+    .category .description p{
+        font-size: 1.2rem;
+    }
+    .category .description h1{
+        font-size: 1.8rem !important;
+    }
+    .category .book{
+        margin: 0.5rem;
+    }
+    .category img{
+        height: 25rem;
+        width: 15rem;
+    }
+    
+} 
+@media screen  and (max-width: 1200px) {
+    .category .description p{
+        font-size: 1.1rem;
+    }
+    .category .description h1{
+        font-size: 1.6rem !important;
+    }
+    .category img{
+        height: 20rem;
+        width: 12rem;
+    }
+    /* change intro section elements into one line */
+    .intro {
+        display: block;
+    }
+    .intro p{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 20px !important;
+    }
+    iframe{
+        width: 80%;
+    }
+    
+}
+@media screen  and (max-width: 960px) {
+   .category{
+    display: block;
+   }   
+    .category .description p{
+        font-size: 1rem;
+    }
+    .category .description h1{
+        font-size: 1.4rem !important;
+    }
+    .category img{
+        height: 15rem;
+        width: 9rem;
+    }
+    .category .description{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .category .book{
+        margin: 0.5rem;
+        padding: 0;
+    }
+    iframe{
+        width: 100%;
+    }
+    .intro
+    {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+} 
+@media screen  and (max-width: 650px) {
+    .category .description p{
+        font-size: 1rem;
+    }
+    .category .description h1{
+        font-size: 1.2rem !important;
+    }
+    .category .description{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .category .book{
+        margin: 0.5rem;
+        padding: 0;
+    }
+    iframe{
+        width: 100%;
+    }
+    .intro
+    {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+    .intro p{
+        font-size: 1rem;
+    }
+    .container-book{
+        display: block;
+    }
+}  
+/* Books END */
+/* Mainpage and Category END */
+
+
+/* BookDetails Page START */
+.product{
+    padding-top: 100px !important;
+}
+ /* Breadcrumbs styles */
+ .breadcrumbs {
+    margin: 0;
+    padding: 8px;
+  }
+  .breadcrumbs li {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 8px;
+    color: aliceblue;
+  }
+  .breadcrumbs li a {
+    color: aliceblue;
+    transition: 0.5s ease all;
+    text-decoration: none;
+  }
+  .breadcrumbs li:last-child {
+    color: aliceblue;
+  }
+  .breadcrumbs  li a:hover {
+    color: skyblue;
+  }
+  /* Book details styles */
+    .book-details {
+        height: fit-content;
+        margin-top: 2rem !important;
+        margin: 10vw;
+        border-radius: 20px;
+        background-color: #A9907E;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    .book-buy{
+        display: flex;
+        align-self: center;
+        text-align: center;
+        align-items: center;
+        place-content: center;
+        padding-top: 2rem;
+    }
+    .book-image {
+        display: flex;
+        position: relative;
+        width: fit-content;
+        margin-right: 10vw;
+    }
+    .book-image .main-image {
+        display: flex;
+        width: fit-content;
+        height: auto;
+        margin-right: 20px;
+    }
+    .minis  img{
+        display: flex;
+        width: 100px;
+        height: 150px;
+        border: 1px solid #ccc;
+        margin: 10px;
+    }
+
+    .book-info {
+        display: block;
+        width: 500px;
+        margin-bottom: 2rem;
+    }
+    .book-info h1 {
+        margin-top: 0;
+        font-size: 2.5rem;
+    }
+    .book-des{
+        display: block;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding:2rem;
+    }
+    .book-des p{
+        font-size: 1.5rem;
+    }
+    .book-des h1{
+        font-size: 2.5rem;
+    }  
+    /* Add to cart button and form submit styles */
+    .add-to-cart {
+        width: 300px;
+        height: 75px;
+        font-size: large;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+    
+    .add-to-cart:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+    
+    .add-to-cart:active {
+        color: #000
+    }
+    
+    .add-to-cart:active:after {
+        background: transparent;
+    }
+    
+    .add-to-cart:hover:before {
+        opacity: 1;
+    }
+    
+    .add-to-cart:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+    
+    @keyframes glowing {
+        0% { background-position: 0 0; }
+        50% { background-position: 400% 0; }
+        100% { background-position: 0 0; }
+    }
+
+@media screen and (max-width: 1800px){
+
+    .book-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .book-des{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .book-buy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .book-image{
+        margin: auto;
+    }
+    .add-to-cart{
+        width: 80%;
+    }
+    .book-des p{
+        font-size: 1.5rem;
+        width: 90%;
+    }
+}
+@media screen and (max-width: 960px){
+    .book-details{
+        margin: 0;
+    }
+    .book-image{
+        display: block;
+        align-items: center;
+    }
+    .book-image .main-image{
+        display: block;
+        margin: auto;
+    }
+    .minis{
+        display:flex
+    }
+    .book-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .book-des{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+    .book-buy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .book-image{
+        margin: auto;
+    }
+    .add-to-cart{
+        width: 80%;
+    }
+    .book-des p{
+        font-size: 1.5rem;
+        width: 90%;
+    }
+}
+    
+
+/* BookDetails Page END */
+
+
+/* Contact START */
+#contactform{
+    margin: 0;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+#contactform h1{
+    font-size: 3rem !important;
+    margin: 0;
+    padding-bottom: 2rem;
+    color: aliceblue;
+}
+#form{
+    color: aliceblue;
+    border-radius: 20px;
+    background-color: #A9907E;
+    padding: 2rem;
+    font-size: 1.5rem;
+    margin-top: 100px !important;
+    margin-bottom: 20px;
+}
+#inputbox{
+    display: table-column;
+    width: 100%;
+}
+#notes{
+    display: table-column;
+    width: 100%;
+}
+.submit{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+}
+#contactform .checkbox{
+    display: flex;
+}
+#contactform .checkbox p{
+    margin: 0;
+    padding-left: 10px;
+}
+.newsletter{
+    display: flex;
+    justify-content: space-between;
+}
+/* Contact END */
