@@ -147,6 +147,14 @@ header .toggle-button{
         display: none;
     }
 }
+@media only screen and (max-width: 500px){
+    header .navbar p{
+        font-size: 5cqw;
+    }
+    header .navbar-img-container{
+        margin-left: 0px;
+    }
+}
 /* Header END */
 
 
